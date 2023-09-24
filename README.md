@@ -37,5 +37,12 @@ tags = {
 
 central availbilty zone - Set this list accoording to AZ's available in the region you have configured.
 Note: Subnets will be created in the same order you are specifying AZ.
+
 availability_zone = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+
+central vpc id - If you are creating VPC then the value here must be blank string "". if not creating `VPC` use this to pass vpc_id to all resources. values passed here will be used as vpc id. 
+
+vpc_id = "vpc-123456789"
+
+
 ```

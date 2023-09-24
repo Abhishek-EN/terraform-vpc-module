@@ -30,19 +30,33 @@ Make sure to configure the following settings in your `terraform.tfvars` file:
 ```hcl
 region = "ap-south-1"  # Set the region according to your use.
 
-Default tags - All tags in this block will be applied to all resources.
+Default tags: All tags in this block will be applied to all resources.
 tags = {
   "owner" = "Abhishek"
 }
 
-central availbilty zone - Set this list accoording to AZ's available in the region you have configured.
+central availbilty zone: Set this list accoording to AZ's available in the region you have configured.
 Note: Subnets will be created in the same order you are specifying AZ.
 
 availability_zone = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
 
-central vpc id - If you are creating VPC then the value here must be blank string "". if not creating `VPC` use this to pass vpc_id to all resources. values passed here will be used as vpc id. 
+central vpc id: If you are creating VPC then the value here must be blank string "". if not creating `VPC` use this to pass vpc_id to all resources. values passed here will be used as vpc id. 
 
 vpc_id = "vpc-123456789"
+
+VPC config: 
+
+vpc_creation             = false     # Set to true to create a VPC.
+vpc_name                 = "Production# Name of the VPC.
+vpc_cidr_block           = "10.200.0.0/16"  # CIDR block for the VPC.
+vpc_enable_dns_hostnames = true     # Enable DNS hostnames for instances in the VPC.
+vpc_enable_dns_support   = true     # Enable DNS support for the VPC.
+
+# Tags specific to the VPC resource.
+vpc_tags = {
+  "Managed by" = "Terraform"
+}
+
 
 
 ```

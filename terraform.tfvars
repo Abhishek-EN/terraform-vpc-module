@@ -6,8 +6,11 @@ tags = {
   "owner" = "Abhishek"
 }
 
-#central availbilty zone
+#central availbilty zones
 availability_zone = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+
+#If you are creating VPC then the value here must be blank string "". if not creating `VPC` use this to pass vpc_id to all resources. values passed here will be used as vpc id.
+vpc_id = "vpc-123456789"
 
 #VPC
 vpc_creation             = false
@@ -18,8 +21,7 @@ vpc_enable_dns_support   = true
 vpc_tags = {
   "Managed by" = "Terraform"
 }
-#central vpc id if not creating vpc use this. if creating vpc then it must be black "". IF YOU ARE NOT CREATING VPC THEN ASSIGN SOME VALUE HERE
-vpc_id = "vpc-123456789"
+
 
 
 

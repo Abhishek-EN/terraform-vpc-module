@@ -68,3 +68,19 @@ vpc_tags = {
   "Managed by" = "Terraform"
 }
 ```
+
+```hcl
+
+# Public Subnets Configuration
+create_public_subnets = true 
+igw_create            = true  # Required when creating Public subnets
+public_subnet_name    = "Production"  # Name for the public subnets. You just need to specify main name, it will add public-subnet-{count index} by default.
+public_subnets        = ["10.200.101.0/24", "10.200.102.0/24", "10.200.103.0/24"]  # List of public subnet CIDR blocks.
+
+# Tags specific to the public subnets.
+public_subnets_tags = {
+  "Managed by" = "Terraform"
+}
+
+
+```

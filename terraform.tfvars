@@ -23,6 +23,14 @@ vpc_tags = {
 }
 
 
+#public subnets
+create_public_subnets = true
+igw_create            = false
+public_subnet_name    = "Production"
+public_subnets        = ["10.200.101.0/24", "10.200.102.0/24", "10.200.103.0/24"]
+public_subnets_tags = {
+  "Managed by" = "Terraform"
+}
 
 
 #private subnets
@@ -42,14 +50,7 @@ nat_tags = {
   "Managed by" = "Terraform"
 }
 
-#public subnets
-create_public_subnets = false
-igw_create            = false
-public_subnet_name    = "changeme"
-public_subnets        = [] #["10.200.101.0/24", "10.200.102.0/24", "10.200.103.0/24"]
-public_subnets_tags = {
-  "Managed by" = "Terraform"
-}
+
 
 #database subnets
 create_database_subnets = false

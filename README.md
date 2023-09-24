@@ -162,7 +162,7 @@ flow_logs_cloudwatch_name   = "production"
 ```hcl
 
 #flow logs s3 configuration
-NOTE: S3 bucket will be created with name = "${var.flow_logs_s3_name}-flow-logs-bucket"
+NOTE: S3 bucket will be created with name = ${var.flow_logs_s3_name}-flow-logs-bucket
 
 create_flow_logs_s3 = false
 flow_logs_s3_name   = "production"

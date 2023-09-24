@@ -21,3 +21,13 @@ Our Terraform VPC module provides the following features:
 - **EKS Subnets**: Streamline the setup of subnets tailored for Amazon Elastic Kubernetes Service (EKS), including route tables and routes optimized for NAT connectivity.
 
 This Terraform module is your go-to solution for building a robust and flexible AWS VPC infrastructure.
+
+## Configuration in terraform.tfvars
+
+region = "ap-south-1" - Set region according to your use.
+
+default tags - All tags in this block will be applied to all resources.
+tags = {
+  "owner" = "Abhishek"
+}
+

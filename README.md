@@ -72,6 +72,8 @@ vpc_tags = {
 ```hcl
 
 # Public Subnets Configuration
+NOTE: Route table and routes will be created automatically.
+
 create_public_subnets = true 
 igw_create            = true  # Required when creating Public subnets
 public_subnet_name    = "Production"  # Name for the public subnets. You just need to specify main name, it will add public-subnet-{count index} by default.
@@ -79,6 +81,34 @@ public_subnets        = ["10.200.101.0/24", "10.200.102.0/24", "10.200.103.0/24"
 
 # Tags specific to the public subnets.
 public_subnets_tags = {
+  "Managed by" = "Terraform"
+}
+
+
+```
+
+```hcl
+
+# Private Subnets Configuration
+create_private_subnets = true 
+private_subnets_name   = "production"  #  # Name for the private subnets. You just need to specify main name, it will add private-subnet-{count index} by default.
+private_subnet_nat     = ""  # ID of the NAT gateway in case you are not creating NAT from here. If creating leave it blank.
+
+
+private_subnets = ["10.200.1.0/24", "10.200.2.0/24", "10.200.3.0/24"] # List of private subnet CIDR blocks. Empty the list to if not creating private subnets and make create_private_subnets = false
+
+# Tags specific to the private subnets.
+private_subnets_tags = {
+  "Managed by" = "Terraform"
+}
+
+# NAT Configuration
+nat_create           = true  # If not creating NAT set it to false.
+nat_name             = "production"  # Name for the NAT gateway.
+nat_public_subnet_id = ""  # Optional. If you are not creating public subnets here then specify Public subnet id to create public nat gateway. If not creating NAT (false) then specify random value. If creating then leave it blank.
+
+# Tags specific to the NAT gateway.
+nat_tags = {
   "Managed by" = "Terraform"
 }
 

@@ -34,18 +34,18 @@ public_subnets_tags = {
 
 
 #private subnets
-create_private_subnets = false
-private_subnets_name   = "changeme"
-private_subnet_nat = ""
-private_subnets        = [] #["10.200.1.0/24", "10.200.2.0/24", "10.200.3.0/24"] #if you are not creating private subnets then empty the list to reduce conflicts "[]"
+create_private_subnets = true
+private_subnets_name   = "production"
+private_subnet_nat = "" # ID of the NAT gateway in case you are not creating NAT from here. If creating leave it blank.
+private_subnets        = ["10.200.1.0/24", "10.200.2.0/24", "10.200.3.0/24"]  #if you are not creating private subnets then empty the list to reduce conflicts "[]"
 private_subnets_tags = {
   "Managed by" = "Terraform"
 }
 
 #NAT
-nat_create           = false
-nat_name             = "changeme"
-nat_public_subnet_id = "sb-12456780" #"changeme-1234567890" ##if creating public subnet then it must be blank. IF YOU ARE NOT CREATING PUBLIC SUBNET THEN ASSIGN SOME VALUE HERE
+nat_create           = true
+nat_name             = "production"
+nat_public_subnet_id = "" # Nat-1234567890" Optional. If you are not creating public subnets here then specify Public subnet id to create public nat gateway. If not creating NAT (false) then specify random value. If creating then leave it blank.
 nat_tags = {
   "Managed by" = "Terraform"
 }
@@ -54,26 +54,26 @@ nat_tags = {
 
 #database subnets
 create_database_subnets = false
-database_subnet_nat     = ""
-database_subnets_name   = "changeme"
+database_subnet_nat     = "" # ID of the NAT gateway in case you are not creating NAT from here. If creating leave it blank.
+database_subnets_name   = "production"
 database_subnets        = []#["10.200.4.0/24", "10.200.5.0/24", "10.200.6.0/24"] #if you are not creating database subnets then empty the list to reduce conflicts "[]"
 database_subnets_tags = {
   "Managed by" = "Terraform"
 }
 
 #eks subnets
-create_eks_subnets = false
-eks_subnets_name   = "changeme"
-eks_subnet_nat = ""
-eks_subnets        = [] #["10.200.7.0/24", "10.200.8.0/24", "10.200.9.0/24"] #if you are not creating eks subnets then empty the list to reduce conflicts "[]"
+create_eks_subnets = true
+eks_subnets_name   = "production"
+eks_subnet_nat = "" # ID of the NAT gateway in case you are not creating NAT from here. If creating leave it blank.
+eks_subnets        = ["10.200.7.0/24", "10.200.8.0/24", "10.200.9.0/24"] #if you are not creating eks subnets then empty the list to reduce conflicts "[]"
 eks_subnets_tags = {
   "Managed by" = "Terraform"
 }
 
 #flow logs cloudwatch
 create_flow_logs_cloudwatch = false
-flow_logs_cloudwatch_name   = "changeme"
+flow_logs_cloudwatch_name   = "production"
 
 #flow logs s3
 create_flow_logs_s3 = false
-flow_logs_s3_name   = "changeme"
+flow_logs_s3_name   = "production"

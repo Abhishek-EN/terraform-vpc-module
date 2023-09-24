@@ -147,3 +147,24 @@ eks_subnets_tags = {
 }
 
 ```
+
+```hcl
+
+#flow logs cloudwatch configuration
+NOTE: Cloudwatch logs group will be created with name = ${flow_logs_cloudwatch_name}-log-group by default along with the required IAM roles.
+
+create_flow_logs_cloudwatch = false
+flow_logs_cloudwatch_name   = "production"
+
+```
+
+
+```hcl
+
+#flow logs s3 configuration
+NOTE: S3 bucket will be created with name = "${var.flow_logs_s3_name}-flow-logs-bucket"
+create_flow_logs_s3 = false
+flow_logs_s3_name   = "production"
+
+
+```

@@ -6,6 +6,9 @@ tags = {
   "owner" = "Abhishek"
 }
 
+#central availbilty zone
+availability_zone = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+
 #VPC
 vpc_creation             = false
 vpc_name                 = "changeme"
@@ -18,8 +21,7 @@ vpc_tags = {
 #central vpc id if not creating vpc use this. if creating vpc then it must be black "". IF YOU ARE NOT CREATING VPC THEN ASSIGN SOME VALUE HERE
 vpc_id = "vpc-123456789"
 
-#central availbilty zone
-availability_zone = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+
 
 #private subnets
 create_private_subnets = false

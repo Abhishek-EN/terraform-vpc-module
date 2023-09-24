@@ -30,8 +30,12 @@ Make sure to configure the following settings in your `terraform.tfvars` file:
 ```hcl
 region = "ap-south-1"  # Set the region according to your use.
 
-# Default tags - All tags in this block will be applied to all resources.
+Default tags - All tags in this block will be applied to all resources.
 tags = {
   "owner" = "Abhishek"
 }
+
+central availbilty zone - Set this list accoording to AZ's available in the region you have configured.
+Note: Subnets will be created in the same order you are specifying AZ.
+availability_zone = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
 ```

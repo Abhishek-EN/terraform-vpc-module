@@ -6,6 +6,7 @@ Welcome to the Terraform VPC module repository. This module is designed to simpl
 
 To utilize this Terraform module, you only need to make adjustments to the `terraform.tfvars` file. This file allows you to tailor the VPC configuration to your specific needs.
 
+
 ## Features
 
 Our Terraform VPC module provides the following features:
@@ -22,12 +23,15 @@ Our Terraform VPC module provides the following features:
 
 This Terraform module is your go-to solution for building a robust and flexible AWS VPC infrastructure.
 
-## Configuration in terraform.tfvars
+### Configuration in `terraform.tfvars`
 
-region = "ap-south-1" - Set region according to your use.
+Make sure to configure the following settings in your `terraform.tfvars` file:
 
-default tags - All tags in this block will be applied to all resources.
+```hcl
+region = "ap-south-1"  # Set the region according to your use.
+
+# Default tags - All tags in this block will be applied to all resources.
 tags = {
   "owner" = "Abhishek"
 }
-
+```

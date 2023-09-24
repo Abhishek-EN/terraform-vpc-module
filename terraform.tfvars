@@ -37,7 +37,7 @@ public_subnets_tags = {
 create_private_subnets = true
 private_subnets_name   = "production"
 private_subnet_nat = "" # ID of the NAT gateway in case you are not creating NAT from here. If creating leave it blank.
-private_subnets        = ["10.200.1.0/24", "10.200.2.0/24", "10.200.3.0/24"]  #if you are not creating private subnets then empty the list to reduce conflicts "[]"
+private_subnets        = ["10.200.1.0/24", "10.200.2.0/24", "10.200.3.0/24"]  #if you are not creating private subnets then empty the list to reduce conflicts "[]" and set create_private_subnets = false.
 private_subnets_tags = {
   "Managed by" = "Terraform"
 }
@@ -54,9 +54,9 @@ nat_tags = {
 
 #database subnets
 create_database_subnets = false
-database_subnet_nat     = "" # ID of the NAT gateway in case you are not creating NAT from here. If creating leave it blank.
 database_subnets_name   = "production"
-database_subnets        = []#["10.200.4.0/24", "10.200.5.0/24", "10.200.6.0/24"] #if you are not creating database subnets then empty the list to reduce conflicts "[]"
+database_subnet_nat     = "" # ID of the NAT gateway in case you are not creating NAT from here. If creating leave it blank.
+database_subnets        = ["10.200.4.0/24", "10.200.5.0/24", "10.200.6.0/24"] #if you are not creating database subnets then empty the list to reduce conflicts "[]" and set create_database_subnets = false.
 database_subnets_tags = {
   "Managed by" = "Terraform"
 }
@@ -65,7 +65,7 @@ database_subnets_tags = {
 create_eks_subnets = true
 eks_subnets_name   = "production"
 eks_subnet_nat = "" # ID of the NAT gateway in case you are not creating NAT from here. If creating leave it blank.
-eks_subnets        = ["10.200.7.0/24", "10.200.8.0/24", "10.200.9.0/24"] #if you are not creating eks subnets then empty the list to reduce conflicts "[]"
+eks_subnets        = ["10.200.7.0/24", "10.200.8.0/24", "10.200.9.0/24"] #if you are not creating eks subnets then empty the list to reduce conflicts "[]"  and set create_eks_subnets = false.
 eks_subnets_tags = {
   "Managed by" = "Terraform"
 }

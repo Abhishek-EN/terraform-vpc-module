@@ -90,6 +90,7 @@ public_subnets_tags = {
 ```hcl
 
 # Private Subnets Configuration
+NOTE: Route table and routes will be created automatically.
 create_private_subnets = true 
 private_subnets_name   = "production"  #  # Name for the private subnets. You just need to specify main name, it will add private-subnet-{count index} by default.
 private_subnet_nat     = ""  # ID of the NAT gateway in case you are not creating NAT from here. If creating leave it blank.
@@ -112,5 +113,37 @@ nat_tags = {
   "Managed by" = "Terraform"
 }
 
+
+```
+
+```hcl
+
+# Database subnets Configuration
+NOTE: Route table and routes will be created automatically.
+
+create_database_subnets = true
+database_subnets_name   = "production"
+database_subnet_nat     = "" # ID of the NAT gateway in case you are not creating NAT from here. If creating leave it blank.
+database_subnets        = ["10.200.4.0/24", "10.200.5.0/24", "10.200.6.0/24"] #if you are not creating database subnets then empty the list to reduce conflicts "[]" and set create_database_subnets = false.
+
+# Tags specific to the NAT gateway.
+database_subnets_tags = {
+  "Managed by" = "Terraform"
+}
+
+```
+
+```hcl
+
+# EKS subnets Configuration
+NOTE: Route table and routes will be created automatically.
+
+create_eks_subnets = true
+eks_subnets_name   = "production"
+eks_subnet_nat = "" # ID of the NAT gateway in case you are not creating NAT from here. If creating leave it blank.
+eks_subnets        = ["10.200.7.0/24", "10.200.8.0/24", "10.200.9.0/24"] #if you are not creating eks subnets then empty the list to reduce conflicts "[]"  and set create_eks_subnets = false.
+eks_subnets_tags = {
+  "Managed by" = "Terraform"
+}
 
 ```

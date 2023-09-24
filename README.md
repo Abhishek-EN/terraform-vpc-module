@@ -106,7 +106,7 @@ private_subnets_tags = {
 # NAT Configuration
 nat_create           = true  # If not creating NAT set it to false.
 nat_name             = "production"  # Name for the NAT gateway.
-nat_public_subnet_id = ""  # Optional. If you are not creating public subnets here then specify Public subnet id to create public nat gateway. If not creating NAT (false) then specify random value. If creating then leave it blank.
+nat_public_subnet_id = ""  # Optional. If you are not creating public subnets here then specify Public subnet id to create public nat gateway. If not creating NAT (false) then specify random value. If creating then leave it blank and NAT gateway will be created in first (index) public subnet.
 
 # Tags specific to the NAT gateway.
 nat_tags = {

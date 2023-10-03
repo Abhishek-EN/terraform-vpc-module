@@ -11,15 +11,13 @@ To utilize this Terraform module, you only need to make adjustments to the `terr
 
 Our Terraform VPC module provides the following features:
 
-- **VPC Creation**: Easily create a VPC in AWS, with the option to select Availability Zones.
+- **VPC Creation**: Easily create a VPC in AWS.
 
-- **Public Subnets**: Automatically set up public subnets complete with an internet gateway, route table, and necessary routes.
+- **Public Subnets**: Automatically set up public subnets complete with an internet gateway, route table, and necessary routes with the option to select Availability Zones.
 
-- **Private Subnets**: Configure private subnets with NAT gateways, route tables, and essential routes for secure networking.
+- **Private, Database, EKS Subnets**: Configure subnets with NAT gateways, route tables, and essential routes with the option to select Availability Zones.
 
-- **Database Subnets**: Create subnets optimized for database workloads with appropriate route tables and routes for NAT connectivity.
-
-- **EKS Subnets**: Streamline the setup of subnets tailored for Amazon Elastic Kubernetes Service (EKS), including route tables and routes optimized for NAT connectivity.
+- **VPC flow logs (Cloudwatch and S3)**: Set `create_flow_logs_s3` or `create_flow_logs_cloudwatch` to true and terraform will take care of IAM roles, policy or S3 buckets.
 
 This Terraform module is your go-to solution for building a robust and flexible AWS VPC infrastructure.
 
